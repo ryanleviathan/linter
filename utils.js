@@ -1,9 +1,7 @@
 const { array } = require("yargs")
 
 function stripInput(input) {
-  const newString = input.replace(/[\-A-Za-z0-9,"'+*/=.,;:&$!?@#%^<>|_]/g, "")
-  let array = newString.split('')
-  return array
+  return input.match(/[(){}\[\]]/g)
 }
 
 const wonkyWord = stripInput('te(s)t{i}n[g]')
