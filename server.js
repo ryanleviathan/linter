@@ -5,9 +5,7 @@ const { linter } = require('./utils.js')
 app.use(express.json())
 
 app.post('/api/v1/lint', (req, res) => {
-  console.log(req.body)
-  const result = linter(req.body)
-  res.send(result)
+  res.send(linter(req.body))
 })
 
 app.listen(3000, () => {
